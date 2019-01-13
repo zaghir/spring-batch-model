@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Liste des comptes Clients</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<!-- use the font -->
+<style>
+body {
+	font-family: 'arial', sans-serif;
+}
+
+td {
+	font-size: 1rem;
+	text-align: justify;	
+}
+.header{
+	font-size: 1rem;
+	background-color: #f1d2d2;
+    border: 1px solid #a09a9a;
+}
+.cell {
+	background-color: #e5e5e5;
+    border: 1px solid #a9a9a9;
+}
+.spacer {
+	margin-top: 23px;
+}
+
+.montion__legale {
+	font-size: x-small;
+	text-align: justify;
+	font-style: italic;
+	color: #9c9c9c;
+}
+</style>
+</head>
+<body leftmargin="100" topmargin="0" marginwidth="0" marginheight="0">
+
+	<table border="0" cellpadding="0" cellspacing="0" width="650"
+		align="left">
+		<tr>
+			<td><span>Bonjour,</span></td>
+		</tr>
+
+		<tr>
+			<td height="15">&nbsp;</td>
+		</tr>
+
+		<tr>
+			<td><span>Veuillez trouver ci-joint la liste des comptes clients trouver par le batch</span></td>
+		</tr>
+		<tr>
+			<td height="5">&nbsp;</td>
+		</tr>
+		<TR th:if="${!comptes.empty } ">
+			<td>vous avez des comptes à verifier</td>
+		</TR>
+		<tr>
+			<td>
+			
+			<table>
+				<th class="header">Id</th><th class="header">Nom</th><th class="header">Prenom</th><th class="header">Compte</th>
+				<tr th:each="cp : ${comptes}">
+					<td th:text= "${cp.id}" class="cell"></td>
+					<td th:text= "${cp.nom}" class="cell"></td>
+					<td th:text= "${cp.prenom}" class="cell"></td>
+					<td th:text= "${cp.numeroCompte}" class="cell"></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<p>
+					Cordialement,</span>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

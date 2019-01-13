@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="retrieveComptes">
+    <![CDATA[
+    	select id , nom , prenom , numero_compte from compte    
+	]]>
+	</entry>
+	
+	<entry key="insertCompte">
+    <![CDATA[
+    	insert into compte(id , nom , prenom , numero_compte) values(:id , :nom , :prenom , :numero_compte)     
+	]]>
+	</entry>
+	
+</properties>
+
+ 
